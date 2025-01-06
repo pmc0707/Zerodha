@@ -3,7 +3,7 @@ import React from 'react';
 function Topnav() {
     return ( 
         <h1>
-            Topnav
+            Topnav 
         </h1>
      );
 }
