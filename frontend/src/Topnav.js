@@ -1,10 +1,11 @@
 import React from 'react';
-function Hero() {
+
+function Topnav() {
     return ( 
         <h1>
-            Hero
+            Topnav
         </h1>
      );
 }
 
-export default Hero;
+export default Topnav;

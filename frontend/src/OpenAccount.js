@@ -1,10 +1,11 @@
 import React from 'react';
-function Hero() {
+
+function OpenAccount() {
     return ( 
         <h1>
-            Hero
+            Open Account
         </h1>
      );
 }
 
-export default Hero;
+export default OpenAccount;

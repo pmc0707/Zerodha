@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Awards() {
+function Education() {
     return (  
         <h1>
-            Awards
+            Education
         </h1>
     );
 }
 
-export default Awards;
+export default Education;
