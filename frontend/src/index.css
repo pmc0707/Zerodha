@@ -14,3 +14,8 @@ code {
 .nav-link {
   margin-left: 20px;
 }
+.link-style {
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
