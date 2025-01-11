@@ -1,6 +1,17 @@
-import React from 'react';
-function SupportPage() {
-    return (  <h1>SupportPage</h1>);
+import React from "react";
+
+import Hero from "./Hero";
+import Createticket from "./Createticket";
+
+
+
+function PricingPage() {
+  return (
+    <>
+      <Hero />
+      <Createticket />
+    </>
+  );
 }
 
-export default SupportPage;
+export default PricingPage;
