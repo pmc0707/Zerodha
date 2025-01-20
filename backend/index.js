@@ -6,8 +6,8 @@ const cors = require("cors");
 const {HoldingModel}= require('./models/HoldingModel');
 const {PositionModel} = require('./models/PositionModel');
 const {OrderModel} = require('./models/OrderModel');
-const authRoute = require("../route/AuthRoute");
-const AuthController = require("../controller/AuthController");
+const authRoute = require("./route/AuthRoute");
+const AuthController = require("./controller/AuthController");
 const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 3002;
