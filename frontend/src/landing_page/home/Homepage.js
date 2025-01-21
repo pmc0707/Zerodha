@@ -8,12 +8,12 @@ import Education from "./Education";
 import OpenAccount from "../OpenAccount";
 
 import Footer from "../Footer";
-import Topnav from "../Topnav";
+
 
 function HomePage() {
   return (
     <>
-      <Topnav />
+      
       <Hero />
       <Awards />
       <Stats />
