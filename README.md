@@ -1,3 +1,13 @@
+# My Project
+
+This is a description of my project.
+
+## Deployment Links
+
+- [Frontend Deployment](https://zerodha-frontend-iede.onrender.com)
+- [Dashboard Deployment](https://zerodha-clone-4jjc.onrender.com)
+
+
 # 📈 Zerodha Clone (MERN Stack)
 
 A full-stack web application that replicates the core functionalities of **Zerodha**, India's largest stock brokerage platform. Built using the **MERN stack (MongoDB, Express, React, Node.js)**, this project provides users with a seamless trading experience, including authentication, stock data visualization, and portfolio management.
