@@ -65,7 +65,7 @@ module.exports = {
   // Development server configuration
   devServer: {
     static: path.resolve(__dirname, 'dist'),
-    port: 3000,
+    port: 3002,
     open: true, // Automatically open the browser
     historyApiFallback: true, // Support React Router
   },

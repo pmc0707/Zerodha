@@ -1,6 +1,7 @@
 const User = require("../models/UserModel");
 const { createSecretToken } = require("../utils/SecretToken");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 module.exports.Signup = async (req, res, next) => {
   try {
@@ -17,7 +18,9 @@ module.exports.Signup = async (req, res, next) => {
     });
     res
       .status(201)
-      .json({ message: "User signed in successfully", success: true, user });
+      .json({ message: "User signed in successfully", 
+      success: true, user,
+      redirectUrl:"https://zerodha-clone-4jjc.onrender.com" });
     next();
   } catch (error) {
     console.error(error);
@@ -50,25 +53,18 @@ module.exports.Login = async (req, res, next) => {
   }
 }
 
-module.exports.userVerification = async(req,res,next)=>{
-  try {
-    const token = req.cookies.token; // Extract token from cookies
-    if (!token) {
-      return res.status(401).json({ message: "Unauthorized: No token provided" });
-    }
-    jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ message: "Unauthorized: Invalid token" });
-      }
-      const user = await User.findById(decoded.id); // Ensure user exists in the database
-      if (!user) {
-        return res.status(404).json({ message: "User not found" });
-      }
-      req.user = user; // Attach user data to the request object
-      next(); // Call the next middleware
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Internal server error" });
+module.exports.userVerification = (req, res) => {
+  const token = req.cookies.token
+  if (!token) {
+    return res.json({ status: false })
   }
-};
+  jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
+    if (err) {
+     return res.json({ status: false })
+    } else {
+      const user = await User.findById(data.id)
+      if (user) return res.json({ status: true, user: user.username })
+      else return res.json({ status: false })
+    }
+  })
+}

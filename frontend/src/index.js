@@ -13,13 +13,15 @@ import Login from "./landing_page/login/Login"
 import NotFound from "./landing_page/NotFound";
 import Footer from "./landing_page/Footer";
 import Topnav from "./landing_page/Topnav";
+import Home from "./landing_page/home/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Topnav />
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Home/>}/>
+      <Route path="/homepage" element={<HomePage />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login/>}/>
       <Route path="/about" element={<AboutPage />} />

@@ -8,9 +8,9 @@ const Holdings = () => {
   // Fetch data from backend
   useEffect(() => {
     axios
-      .get('https://zerodha-xzoh.onrender.com/allHoldings')
+      .get('https://zerodha-xzoh.onrender.com/allHolding')
       .then((res) => {
-        console.log('Data fetched:', res.data); // Debugging log
+        // console.log('Data fetched:', res.data); // Debugging log
         setAllHoldings(res.data);
       })
       .catch((error) => {
